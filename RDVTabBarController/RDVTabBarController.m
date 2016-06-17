@@ -127,6 +127,12 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (void)updateSelectedViewControllerFrame
+{
+    [[[self selectedViewController] view] setFrame:[[self contentView] bounds]];
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
 - (void)setViewControllers:(NSArray *)viewControllers {
     if (_viewControllers && _viewControllers.count) {
         for (UIViewController *viewController in _viewControllers) {
